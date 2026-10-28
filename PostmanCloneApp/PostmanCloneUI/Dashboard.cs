@@ -9,6 +9,7 @@ public partial class Dashboard : Form
     public Dashboard()
     {
         InitializeComponent();
+        httpVerbSelection.SelectedItem = "GET";
     }
     private void Dashboard_Load(object sender, EventArgs e)
     {
@@ -30,7 +31,7 @@ public partial class Dashboard : Form
             systemStatus.Text = "Calling API...";
 
             resultsText.Text = await api.CallApiAsync(Apitext.Text);
-
+            callData.SelectedTab = outputTab;
             systemStatus.Text = "Ready";
         }
         catch (Exception ex)
