@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace PostmanCloneLib
+namespace PostmanCloneLib;
+
+public enum HttpAction
 {
-    internal class Enums
-    {
-    }
+    GET
 }
