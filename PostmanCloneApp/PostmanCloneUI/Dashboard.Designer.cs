@@ -106,7 +106,7 @@
             // 
             httpVerbSelection.DropDownStyle = ComboBoxStyle.DropDownList;
             httpVerbSelection.FormattingEnabled = true;
-            httpVerbSelection.Items.AddRange(new object[] { "GET", "POST" });
+            httpVerbSelection.Items.AddRange(new object[] { "GET", "POST", "PUT", "PATCH", "DELETE" });
             httpVerbSelection.Location = new Point(87, 70);
             httpVerbSelection.Name = "httpVerbSelection";
             httpVerbSelection.Size = new Size(102, 40);
@@ -168,6 +168,7 @@
             resultsText.ScrollBars = ScrollBars.Both;
             resultsText.Size = new Size(859, 417);
             resultsText.TabIndex = 4;
+            resultsText.TextChanged += resultsText_TextChanged;
             // 
             // Dashboard
             // 

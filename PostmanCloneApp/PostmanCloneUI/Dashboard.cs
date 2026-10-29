@@ -27,7 +27,7 @@ public partial class Dashboard : Form
         }
 
         HttpAction action;
-        if(Enum.TryParse(httpVerbSelection.SelectedItem!.ToString(), out action) == false)
+        if (Enum.TryParse(httpVerbSelection.SelectedItem!.ToString(), out action) == false)
         {
             systemStatus.Text = "Invalid HTTP Verb";
             return;
@@ -59,6 +59,11 @@ public partial class Dashboard : Form
 
     private void Apitext_TextChanged_1(object sender, EventArgs e)
     {
-        
+
+    }
+
+    private void resultsText_TextChanged(object sender, EventArgs e)
+    {
+
     }
 }
