@@ -20,11 +20,11 @@ public partial class Dashboard : Form
         systemStatus.Text = "Calling API...";
         resultsText.Text = "";
 
-        if (!api.IsValidUrl(Apitext.Text))
+        if (api.IsValidUrl(Apitext.Text) == false)
         {
             systemStatus.Text = "Invalid URL";
             return;
-        }
+        } 
 
         HttpAction action;
         if (Enum.TryParse(httpVerbSelection.SelectedItem!.ToString(), out action) == false)

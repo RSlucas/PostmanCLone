@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace PostmanCloneLib;
 
@@ -17,7 +16,7 @@ public class ApiAcces : IApiAcces
     {
 
         StringContent stringContent = new(content, Encoding.UTF8, "application/json");
-        return await CallApiAsync(url, new StringContent(content), action, formatOutput);
+        return await CallApiAsync(url, stringContent, action, formatOutput);
 
     }
 
@@ -38,6 +37,16 @@ public class ApiAcces : IApiAcces
             case HttpAction.POST:
                 response = await client.PostAsync(url, content);
                 break;
+            case HttpAction.PUT:
+                response = await client.PutAsync(url, content);
+                break;
+            case HttpAction.PATCH:
+                response = await client.PatchAsync(url, content);
+                break;
+            case HttpAction.DELETE:
+                response = await client.DeleteAsync(url);
+                break;
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(action), action, null);
         }
