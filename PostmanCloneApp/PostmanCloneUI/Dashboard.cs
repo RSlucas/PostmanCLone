@@ -17,12 +17,15 @@ public partial class Dashboard : Form
 
     private async void CallAPI_Click(object sender, EventArgs e)
     {
+        systemStatus.BackColor = Color.Transparent;
+
         systemStatus.Text = "Calling API...";
         resultsText.Text = "";
 
         if (api.IsValidUrl(Apitext.Text) == false)
         {
             systemStatus.Text = "Invalid URL";
+            systemStatus.BackColor = Color.Red;
             return;
         } 
 
@@ -41,6 +44,7 @@ public partial class Dashboard : Form
             callData.SelectedTab = outputTab;
             outputTab.Focus();
             systemStatus.Text = "Ready";
+            systemStatus.BackColor = Color.Green;
         }
         catch (Exception ex)
         {

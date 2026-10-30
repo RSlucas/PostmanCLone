@@ -49,19 +49,22 @@
             // fhead
             // 
             fhead.AutoSize = true;
-            fhead.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            fhead.Location = new Point(28, 9);
+            fhead.BackColor = Color.Peru;
+            fhead.Font = new Font("Sylfaen", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            fhead.Location = new Point(290, 9);
             fhead.Name = "fhead";
-            fhead.Size = new Size(254, 47);
+            fhead.Size = new Size(258, 46);
             fhead.TabIndex = 0;
             fhead.Text = "Postman Clone";
             // 
             // apiLabel
             // 
             apiLabel.AutoSize = true;
+            apiLabel.BackColor = Color.Peru;
+            apiLabel.Font = new Font("Sylfaen", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             apiLabel.Location = new Point(28, 74);
             apiLabel.Name = "apiLabel";
-            apiLabel.Size = new Size(53, 32);
+            apiLabel.Size = new Size(63, 31);
             apiLabel.TabIndex = 1;
             apiLabel.Text = "API:";
             apiLabel.Click += apiLabel_Click;
@@ -71,6 +74,7 @@
             Apitext.BorderStyle = BorderStyle.FixedSingle;
             Apitext.Location = new Point(195, 71);
             Apitext.Name = "Apitext";
+            Apitext.PlaceholderText = "insert your URL...";
             Apitext.Size = new Size(576, 39);
             Apitext.TabIndex = 2;
             Apitext.TextChanged += Apitext_TextChanged_1;
